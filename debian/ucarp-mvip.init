@@ -48,7 +48,7 @@ VERBOSE=no
 [ ${CONFIGURE_INTERFACES} = "no" ] && exit 0
 
 get_files() {
-    FILES=`find /etc/ucarp-mvip/ -maxdepth 1 -type f -name 'vip-*.conf' \
+    FILES=`find -L /etc/ucarp-mvip/ -maxdepth 1 -type f -name 'vip-*.conf' \
            -printf "%f\n" | LC_COLLATE="C" sort`
 }
 
