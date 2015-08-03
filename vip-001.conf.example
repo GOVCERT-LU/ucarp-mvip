@@ -16,3 +16,8 @@ VIP_INTERFACE="eth0:carp0"
 # (the lower the "-k <val>" the higher priority and "-P" to become master ASAP)
 OPTIONS="-k 128 -P"
 
+# Specifies the command to run after ucarp has successfully become master
+UPSCRIPT=/usr/share/ucarp-mvip/vip-up
+
+# Specifies  the command that is run after ucarp has transitioned to the backup state
+DOWNSCRIPT=/usr/share/ucarp-mvip/vip-down

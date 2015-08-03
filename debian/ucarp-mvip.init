@@ -95,16 +95,16 @@ do_start() {
                 --make-pidfile --background --test --exec /usr/sbin/ucarp -- \
                 -v ${ID} -p ${PASSWORD} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
                 -i ${VIP_INTERFACE} ${OPTIONS} \
-                --upscript=/usr/share/ucarp-mvip/vip-up \
-                --downscript=/usr/share/ucarp-mvip/vip-down > /dev/null \
+                --upscript=${UPSCRIPT} \
+                --downscript=${DOWNSCRIPT} > /dev/null \
                 || return 1
 
             start-stop-daemon --start --pidfile /var/run/ucarp.${ID} \
                 --make-pidfile --background --exec /usr/sbin/ucarp -- \
                 -v ${ID} -p ${PASSWORD} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
                 -i ${VIP_INTERFACE} ${OPTIONS} \
-                --upscript=/usr/share/ucarp-mvip/vip-up \
-                --downscript=/usr/share/ucarp-mvip/vip-down \
+                --upscript=${UPSCRIPT} \
+                --downscript=${DOWNSCRIPT} \
                 || return 2
         done
     fi
