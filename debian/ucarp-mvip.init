@@ -93,7 +93,7 @@ do_start() {
 
             start-stop-daemon --start --pidfile /var/run/ucarp.${ID} \
                 --make-pidfile --background --test --exec /usr/sbin/ucarp -- \
-                -v ${ID} -p ${PASSWORD} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
+                -v ${ID} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
                 -i ${VIP_INTERFACE} ${OPTIONS} \
                 --upscript=${UPSCRIPT} \
                 --downscript=${DOWNSCRIPT} > /dev/null \
@@ -101,7 +101,7 @@ do_start() {
 
             start-stop-daemon --start --pidfile /var/run/ucarp.${ID} \
                 --make-pidfile --background --exec /usr/sbin/ucarp -- \
-                -v ${ID} -p ${PASSWORD} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
+                -v ${ID} -s ${BIND_ADDRESS} -a ${VIP_ADDRESS} \
                 -i ${VIP_INTERFACE} ${OPTIONS} \
                 --upscript=${UPSCRIPT} \
                 --downscript=${DOWNSCRIPT} \
@@ -122,7 +122,7 @@ do_stop() {
         # Source ucarp settings
         . /etc/ucarp-mvip/${FILE}
         start-stop-daemon --stop --pidfile /var/run/ucarp.${ID} \
-            --exec /usr/sbin/ucarp -- -v ${ID} -p ${PASSWORD} -s \
+            --exec /usr/sbin/ucarp -- -v ${ID} -s \
             ${BIND_ADDRESS} -a ${VIP_ADDRESS} -i ${VIP_INTERFACE} ${OPTIONS} \
             --upscript=${UPSCRIPT} \
             --downscript=${DOWNSCRIPT}

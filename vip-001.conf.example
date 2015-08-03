@@ -14,7 +14,7 @@ VIP_INTERFACE="eth0:carp0"
 
 # If you have extra options to add, see "ucarp --help" output
 # (the lower the "-k <val>" the higher priority and "-P" to become master ASAP)
-OPTIONS="-k 128 -P"
+OPTIONS="-k 128 -P -p ${PASSWORD}"
 
 # Specifies the command to run after ucarp has successfully become master
 UPSCRIPT=/usr/share/ucarp-mvip/vip-up

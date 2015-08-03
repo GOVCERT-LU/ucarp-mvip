@@ -1,4 +1,4 @@
-ucarp-mvip (1.0~dev10) UNRELEASED; urgency=low
+ucarp-mvip (1.0~dev11) UNRELEASED; urgency=low
 
   [ Tero Kantonen ]
   * Initial release.
@@ -9,5 +9,6 @@ ucarp-mvip (1.0~dev10) UNRELEASED; urgency=low
 
   [ Georges Toth ]
   * make the up- and down-script configurable per VIP
+  * remove hardcoded password parameter in init script in order to also support password-file
 
  -- Georges Toth <georges.toth@govcert.etat.lu>  Mon, 03 Aug 2015 13:54:08 +0200
